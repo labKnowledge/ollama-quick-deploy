@@ -1,5 +1,16 @@
 FROM ollama/ollama
 
+# Set environment variables
+ENV OLLAMA_HOST=0.0.0.0
+ENV OLLAMA_PORT=80
+ENV OLLAMA_DEBUG=false
+ENV OLLAMA_MAX_LOADED_MODELS=1
+ENV OLLAMA_MAX_QUEUE=512
+ENV OLLAMA_MAX_VRAM=0
+ENV OLLAMA_NOPRUNE=false
+ENV OLLAMA_NUM_PARALLEL=1
+ENV OLLAMA_ORIGINS=*
+
 COPY start_ollama.sh /start_ollama.sh
 RUN chmod +x /start_ollama.sh
 
